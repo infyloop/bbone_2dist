@@ -1,0 +1,26 @@
+{
+  "name": "Bbone To Do List",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Easiest way to manage your todo list. Works offline ",
+  "content_scripts": [
+    {
+      "matches": ["http://www.google.com/*"],
+      "css": ["/static/css/style.css", "/static/css/todos.css"],
+      "js": ["static/js/lib/json2.js", "static/js/lib/jquery-1.6.4.min.js",
+             "static/js/lib/underscore-1.1.6.js", "static/js/lib/backbone.js",
+             "static/js/lib/backbone-localstorage.js",
+             "static/js/modules/todos.js"]
+    }
+  ],
+
+  "content_security_policy": "script-src 'self' https://example.com; object-src 'self'",
+
+  "app" : {
+    "launch" : {
+      "local_path" : "index.html"
+    }
+  },
+  "icons" : {"16" : "/static/img/icon16.png","48" : "/static/img/icon48.png","128" : "/static/img/icon128.png"},
+  "permissions": []
+}
